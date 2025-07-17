@@ -298,38 +298,34 @@
   }
 }
 .portfolio-filter-btn {
-  @apply px-4 py-2 rounded font-bold shadow bg-white text-[#d3544a] hover:bg-gray-100 transition relative overflow-hidden;
-  font-size: 1.1rem;
-  border: 2px solid #d3544a;
-  box-shadow: 0 2px 8px 0 rgba(211,84,74,0.08);
+  background: #fff;
+  color: #222;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.18);
+  padding: 0.7rem 2.2rem;
+  border: none;
+  outline: none;
   margin-bottom: 0.1rem;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.15s;
+  letter-spacing: 0.5px;
+  cursor: pointer;
 }
 .portfolio-filter-btn.active {
-  @apply bg-gradient-to-r from-[#d3544a] to-[#b03a2e] text-white shadow-lg;
-  border: 2px solid #b03a2e;
+  background: #111;
+  color: #fff;
+  box-shadow: 0 4px 16px 0 rgba(0,0,0,0.22);
   transform: scale(1.08);
   z-index: 2;
 }
+.portfolio-filter-btn:active {
+  transform: scale(0.97);
+}
 .filter-label {
-  font-weight: 900;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: none;
   padding: 0 0.5rem;
   position: relative;
-}
-.portfolio-filter-btn.filter-all .filter-label {
-  color: #d3544a;
-  text-shadow: 0 2px 8px #f8c291;
-}
-.portfolio-filter-btn.filter-apps .filter-label {
-  color: #16a085;
-  text-shadow: 0 2px 8px #b8e994;
-}
-.portfolio-filter-btn.filter-websites .filter-label {
-  color: #2980b9;
-  text-shadow: 0 2px 8px #d6eaff;
-}
-.portfolio-filter-btn.active .filter-label {
-  color: #fff !important;
-  text-shadow: 0 2px 8px #b03a2e;
 }
