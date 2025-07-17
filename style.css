@@ -1,0 +1,67 @@
+
+  .card {
+    background: rgba(26, 26, 26, 0.8);
+    backdrop-filter: blur(8px);
+    border: 1px solid #3f3f3f;
+    border-radius: 1rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    padding: 1.5rem;
+    width: 10rem;
+    height: 7rem;
+    color: white;
+    font-weight: 600;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+  }
+
+  .float-1 {
+    animation: float1 6s ease-in-out infinite;
+  }
+  .float-2 {
+    animation: float2 7s ease-in-out infinite;
+  }
+  .float-3 {
+    animation: float3 8s ease-in-out infinite;
+  }
+  .float-4 {
+    animation: float4 6.5s ease-in-out infinite;
+  }
+  .float-5 {
+    animation: float5 7.5s ease-in-out infinite;
+  }
+  .float-6 {
+    animation: float6 9s ease-in-out infinite;
+  }
+
+  @keyframes float1 {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px) translateX(5px); }
+  }
+  @keyframes float2 {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px) translateX(-4px); }
+  }
+  @keyframes float3 {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px) translateX(3px); }
+  }
+  @keyframes float4 {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px) translateX(-6px); }
+  }
+  @keyframes float5 {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-18px) translateX(6px); }
+  }
+  @keyframes float6 {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-9px) translateX(-7px); }
+  }
