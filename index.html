@@ -9,6 +9,11 @@
   <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.32/build/spline-viewer.js"></script>
 </head>
 <body class="bg-black text-white">
+  <!-- ANIMATED OVERLAY -->
+  <div id="intro-overlay" class="fixed inset-0 flex flex-col items-center justify-center bg-white z-[9999] transition-opacity duration-100">
+    <h1 class="text-5xl md:text-7xl text-black font-bold mb-4 animate-intro">DusunWeb</h1>
+    <p class="text-xl md:text-2xl text-gray-300 animate-intro">Explore the Future of 3D Web</p>
+  </div>
   <!-- NAVBAR -->
   <header class="w-full fixed top-0 left-0 z-50 bg-[#0f0f0f]/80 backdrop-blur-lg border-b border-gray-800">
     <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
@@ -23,12 +28,65 @@
 
   <!-- HERO SECTION -->
   <section class="relative w-full h-screen overflow-hidden flex items-center justify-between pt-24">
+    <!-- Dynamic words above chipset -->
+    <span id="dynamic-words" class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl md:text-4xl font-bold text-white z-20 drop-shadow-lg transition-opacity duration-500"></span>
     <div class="absolute inset-0 z-0">
       <spline-viewer url="https://prod.spline.design/ms54OA84Iw1XjF2q/scene.splinecode" class="w-full h-full"></spline-viewer>
     </div>
     <div class="relative z-10 max-w-xl px-6 md:px-20">
-      <h1 class="text-4xl md:text-6xl font-bold text-white drop-shadow-lg mb-4">DusunWeb</h1>
-      <p class="text-lg md:text-2xl text-gray-300">Explore the Future of 3D Web</p>
+      <h1 class="text-4xl md:text-6xl font-bold text-white drop-shadow-lg mb-4">
+        <a id="hero-title-link" href="#" class="transition-colors duration-300">
+          <span id="hero-title"></span>
+        </a>
+      </h1>
+      <p class="text-lg md:text-2xl text-gray-300">
+        <span id="hero-subtitle"></span>
+      </p>
+    </div>
+  </section>
+
+  <!-- OUR SERVICES SECTION -->
+  <section id="our-services" class="w-full bg-white dark:bg-black py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-center text-3xl md:text-5xl font-extrabold mb-10 text-gray-900 dark:text-white tracking-tight">
+        <span class="block text-lg font-semibold text-red-400 mb-2">OUR SERVICES</span>
+        We Are Specialized In The Following Services
+      </h2>
+      <div id="service-cards" class="grid grid-cols-2 md:grid-cols-6 gap-4 mb-10">
+        <button class="service-card active text-center flex flex-col items-center justify-center" data-index="0">
+          <span class="block text-4xl mb-2">🖥️</span>
+          <span class="font-bold text-base md:text-lg">Business Website</span>
+          <span class="service-desc mt-1">Company profile, portfolio, landing page</span>
+        </button>
+        <button class="service-card text-center flex flex-col items-center justify-center" data-index="1">
+          <span class="block text-4xl mb-2">🛒</span>
+          <span class="font-bold text-base md:text-lg">e-Commerce Website</span>
+          <span class="service-desc mt-1">Online shop, payment, inventory</span>
+        </button>
+        <button class="service-card text-center flex flex-col items-center justify-center" data-index="2">
+          <span class="block text-4xl mb-2">💻</span>
+          <span class="font-bold text-base md:text-lg">App Development</span>
+          <span class="service-desc mt-1">Web & mobile apps, custom system</span>
+        </button>
+        <button class="service-card text-center flex flex-col items-center justify-center" data-index="3">
+          <span class="block text-4xl mb-2">🔍</span>
+          <span class="font-bold text-base md:text-lg">SEO</span>
+          <span class="service-desc mt-1">Google ranking, traffic, analytics</span>
+        </button>
+        <button class="service-card text-center flex flex-col items-center justify-center" data-index="4">
+          <span class="block text-4xl mb-2">🌐</span>
+          <span class="font-bold text-base md:text-lg">Digital Marketing</span>
+          <span class="service-desc mt-1">Social media, ads, content</span>
+        </button>
+        <button class="service-card text-center flex flex-col items-center justify-center" data-index="5">
+          <span class="block text-4xl mb-2">🧩</span>
+          <span class="font-bold text-base md:text-lg">Branding</span>
+          <span class="service-desc mt-1">Logo, identity, guidelines</span>
+        </button>
+      </div>
+      <div id="service-content" class="bg-gray-50 dark:bg-[#18181b] rounded-2xl shadow-lg p-8 flex flex-col md:flex-row items-center gap-8 transition-all duration-500">
+        <!-- Konten detail dinamis akan diisi oleh JS -->
+      </div>
     </div>
   </section>
 
@@ -58,16 +116,106 @@
     </div>
   </section>
 
-  <!-- SKILL CARDS SECTION -->
-  <section class="relative w-full min-h-screen overflow-hidden px-4 py-24 bg-black">
-    <spline-viewer url="https://prod.spline.design/6YUXg7ON155WZigl/scene.splinecode" class="absolute inset-0 w-full h-full z-0"></spline-viewer>
-    <div class="relative z-10 max-w-7xl mx-auto">
-      <div id="card-1" class="card bg-[#1a1a1a]/80 backdrop-blur-md border border-gray-700 rounded-2xl shadow-xl p-6 w-40 md:w-48 h-28 flex items-center justify-center text-center text-sm font-semibold text-white hover:scale-105 transition-all">Logic Scratch</div>
-      <div id="card-2" class="card bg-[#1a1a1a]/80 backdrop-blur-md border border-gray-700 rounded-2xl shadow-xl p-6 w-40 md:w-48 h-28 flex items-center justify-center text-center text-sm font-semibold text-white hover:scale-105 transition-all">UI / UX</div>
-      <div id="card-3" class="card bg-[#1a1a1a]/80 backdrop-blur-md border border-gray-700 rounded-2xl shadow-xl p-6 w-40 md:w-48 h-28 flex items-center justify-center text-center text-sm font-semibold text-white hover:scale-105 transition-all">Database</div>
-      <div id="card-4" class="card bg-[#1a1a1a]/80 backdrop-blur-md border border-gray-700 rounded-2xl shadow-xl p-6 w-40 md:w-48 h-28 flex items-center justify-center text-center text-sm font-semibold text-white hover:scale-105 transition-all">API</div>
-      <div id="card-5" class="card bg-[#1a1a1a]/80 backdrop-blur-md border border-gray-700 rounded-2xl shadow-xl p-6 w-40 md:w-48 h-28 flex items-center justify-center text-center text-sm font-semibold text-white hover:scale-105 transition-all">Deployment</div>
-      <div id="card-6" class="card bg-[#1a1a1a]/80 backdrop-blur-md border border-gray-700 rounded-2xl shadow-xl p-6 w-40 md:w-48 h-28 flex items-center justify-center text-center text-sm font-semibold text-white hover:scale-105 transition-all">Dev Tools</div>
+  <!-- INTERACTIVE TIMELINE SECTION -->
+  <section id="timeline" class="w-full py-20 px-4 bg-gradient-to-b from-[#18181b] to-black text-white">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-center text-3xl md:text-5xl font-extrabold mb-10 tracking-tight">Your Learning Journey</h2>
+      <div class="relative border-l-4 border-blue-700 ml-6">
+        <div class="timeline-step mb-12 ml-8 flex items-center group">
+          <div class="w-10 h-10 flex items-center justify-center rounded-full bg-blue-700 text-white font-bold text-xl shadow-lg group-hover:scale-110 transition">1</div>
+          <div class="ml-6">
+            <h3 class="text-xl font-bold mb-1">Start with Basics</h3>
+            <p class="text-gray-300">Learn HTML, CSS, and JavaScript from scratch with interactive projects.</p>
+          </div>
+        </div>
+        <div class="timeline-step mb-12 ml-8 flex items-center group">
+          <div class="w-10 h-10 flex items-center justify-center rounded-full bg-green-600 text-white font-bold text-xl shadow-lg group-hover:scale-110 transition">2</div>
+          <div class="ml-6">
+            <h3 class="text-xl font-bold mb-1">Explore 3D & Animation</h3>
+            <p class="text-gray-300">Bring your ideas to life with 3D design, Spline, and web animation.</p>
+          </div>
+        </div>
+        <div class="timeline-step mb-12 ml-8 flex items-center group">
+          <div class="w-10 h-10 flex items-center justify-center rounded-full bg-yellow-500 text-white font-bold text-xl shadow-lg group-hover:scale-110 transition">3</div>
+          <div class="ml-6">
+            <h3 class="text-xl font-bold mb-1">Build Real Projects</h3>
+            <p class="text-gray-300">Combine frontend and backend to create fullstack, real-world apps.</p>
+          </div>
+        </div>
+        <div class="timeline-step ml-8 flex items-center group">
+          <div class="w-10 h-10 flex items-center justify-center rounded-full bg-purple-600 text-white font-bold text-xl shadow-lg group-hover:scale-110 transition">4</div>
+          <div class="ml-6">
+            <h3 class="text-xl font-bold mb-1">Join the Community</h3>
+            <p class="text-gray-300">Share, collaborate, and grow with other passionate learners.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FUN FACT 3D FLIP SECTION -->
+  <section id="fun-fact-3d" class="w-full py-20 px-4 bg-white dark:bg-[#18181b]">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-center text-3xl md:text-5xl font-extrabold mb-10 tracking-tight text-gray-900 dark:text-white">Did You Know?</h2>
+      <div class="flex flex-wrap justify-center gap-8">
+        <div class="flip-card group w-64 h-64 cursor-pointer">
+          <div class="flip-card-inner group-hover:rotate-y-180 transition-transform duration-700">
+            <div class="flip-card-front bg-blue-600 text-white flex flex-col items-center justify-center rounded-2xl shadow-xl w-full h-full">
+              <span class="text-5xl mb-4">🌐</span>
+              <span class="text-xl font-bold">Web is 30+ Years Old</span>
+            </div>
+            <div class="flip-card-back bg-white dark:bg-[#23232b] text-blue-700 dark:text-blue-300 flex flex-col items-center justify-center rounded-2xl shadow-xl w-full h-full rotate-y-180">
+              <span class="text-lg font-semibold">The World Wide Web was invented in 1989 by Tim Berners-Lee!</span>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card group w-64 h-64 cursor-pointer">
+          <div class="flip-card-inner group-hover:rotate-y-180 transition-transform duration-700">
+            <div class="flip-card-front bg-green-600 text-white flex flex-col items-center justify-center rounded-2xl shadow-xl w-full h-full">
+              <span class="text-5xl mb-4">🦾</span>
+              <span class="text-xl font-bold">AI on the Web</span>
+            </div>
+            <div class="flip-card-back bg-white dark:bg-[#23232b] text-green-700 dark:text-green-300 flex flex-col items-center justify-center rounded-2xl shadow-xl w-full h-full rotate-y-180">
+              <span class="text-lg font-semibold">AI is now powering search, design, and even code on the web!</span>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card group w-64 h-64 cursor-pointer">
+          <div class="flip-card-inner group-hover:rotate-y-180 transition-transform duration-700">
+            <div class="flip-card-front bg-yellow-500 text-white flex flex-col items-center justify-center rounded-2xl shadow-xl w-full h-full">
+              <span class="text-5xl mb-4">⚡</span>
+              <span class="text-xl font-bold">Fastest Website</span>
+            </div>
+            <div class="flip-card-back bg-white dark:bg-[#23232b] text-yellow-700 dark:text-yellow-300 flex flex-col items-center justify-center rounded-2xl shadow-xl w-full h-full rotate-y-180">
+              <span class="text-lg font-semibold">The fastest sites load in under 0.5 seconds. Speed matters!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMUNITY WALL SECTION -->
+  <section id="community-wall" class="w-full py-20 px-4 bg-gradient-to-b from-[#23232b] to-black text-white">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-center text-3xl md:text-5xl font-extrabold mb-10 tracking-tight">Community Wall</h2>
+      <div class="flex flex-wrap gap-6 justify-center items-end">
+        <div class="bubble-chat bg-blue-600 text-white rounded-2xl px-6 py-4 shadow-lg relative animate-bounce-in">
+          <img src="images/course1.jpg" class="w-10 h-10 rounded-full absolute -top-6 left-4 border-2 border-white shadow" />
+          <span class="block font-bold mb-1">Ayu</span>
+          <span class="block text-sm">Aku suka belajar 3D di DusunWeb, seru banget!</span>
+        </div>
+        <div class="bubble-chat bg-green-600 text-white rounded-2xl px-6 py-4 shadow-lg relative animate-bounce-in delay-200">
+          <img src="images/course2.jpg" class="w-10 h-10 rounded-full absolute -top-6 left-4 border-2 border-white shadow" />
+          <span class="block font-bold mb-1">Budi</span>
+          <span class="block text-sm">Komunitasnya ramah dan supportif!</span>
+        </div>
+        <div class="bubble-chat bg-yellow-500 text-white rounded-2xl px-6 py-4 shadow-lg relative animate-bounce-in delay-400">
+          <img src="images/course3.jpg" class="w-10 h-10 rounded-full absolute -top-6 left-4 border-2 border-white shadow" />
+          <span class="block font-bold mb-1">Cici</span>
+          <span class="block text-sm">Banyak insight baru setiap hari!</span>
+        </div>
+      </div>
     </div>
   </section>
 

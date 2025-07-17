@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Kampung</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .curved-headline {
+      font-size: 2.5rem;
+      font-weight: 800;
+      text-align: center;
+      color: #ea580c;
+      margin-bottom: 1.5rem;
+      letter-spacing: 2px;
+      transform: rotate(-2deg);
+      text-shadow: 0 2px 8px #fbbf24;
+    }
+    .impact-stat {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #ea580c;
+      margin-bottom: 0.5rem;
+    }
+    .floating {
+      animation: float 2.5s ease-in-out infinite alternate;
+    }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-18px); }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-[#fdf6f0] to-[#e0e7ef] dark:from-[#18181b] dark:to-[#23232b] text-gray-900 dark:text-white">
+  <!-- HERO -->
+  <section class="w-full py-20 px-4 flex flex-col md:flex-row items-center justify-between gap-10 relative">
+    <div class="flex-1 flex flex-col justify-center items-start">
+      <div class="curved-headline">Welcome to Digital Kampung</div>
+      <p class="text-lg md:text-2xl mb-6 max-w-xl">A digital village for everyone. We empower communities with technology, learning, and collaboration.</p>
+      <a href="../index.html" class="inline-block px-6 py-3 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-lg shadow transition mb-4">← Back to Home</a>
+    </div>
+    <div class="flex-1 flex justify-center items-center">
+      <svg width="180" height="180" viewBox="0 0 180 180"><circle cx="90" cy="90" r="80" fill="#fbbf24" opacity="0.2"/><circle cx="90" cy="90" r="60" fill="#ea580c" opacity="0.3"/></svg>
+      <img src="../images/course1.jpg" alt="Digital Kampung" class="rounded-2xl shadow-2xl w-60 h-48 object-cover border-4 border-orange-100 dark:border-orange-900 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+    </div>
+  </section>
+
+  <!-- COMMUNITY WALL -->
+  <section class="w-full py-16 px-4 bg-white dark:bg-[#23232b]">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-5xl font-bold mb-8 text-orange-600">Community Wall</h2>
+      <div class="flex flex-wrap gap-6 justify-center items-end">
+        <div class="bubble-chat bg-orange-600 text-white rounded-2xl px-6 py-4 shadow-lg relative animate-bounce-in">
+          <img src="../images/course1.jpg" class="w-10 h-10 rounded-full absolute -top-6 left-4 border-2 border-white shadow" />
+          <span class="block font-bold mb-1">Ayu</span>
+          <span class="block text-sm">Belajar digital di kampung itu seru!</span>
+        </div>
+        <div class="bubble-chat bg-green-600 text-white rounded-2xl px-6 py-4 shadow-lg relative animate-bounce-in delay-200">
+          <img src="../images/course2.jpg" class="w-10 h-10 rounded-full absolute -top-6 left-4 border-2 border-white shadow" />
+          <span class="block font-bold mb-1">Budi</span>
+          <span class="block text-sm">Komunitasnya ramah dan supportif!</span>
+        </div>
+        <div class="bubble-chat bg-yellow-500 text-white rounded-2xl px-6 py-4 shadow-lg relative animate-bounce-in delay-400">
+          <img src="../images/course3.jpg" class="w-10 h-10 rounded-full absolute -top-6 left-4 border-2 border-white shadow" />
+          <span class="block font-bold mb-1">Cici</span>
+          <span class="block text-sm">Banyak insight baru setiap hari!</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY ZOOM -->
+  <section class="w-full py-16 px-4 bg-gradient-to-b from-orange-50 to-white dark:from-[#23232b] dark:to-[#18181b]">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-5xl font-bold mb-8 text-orange-600">Gallery</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <img src="../images/course1.jpg" class="rounded-xl shadow-lg w-full h-48 object-cover transform hover:scale-110 transition" />
+        <img src="../images/course2.jpg" class="rounded-xl shadow-lg w-full h-48 object-cover transform hover:scale-110 transition" />
+        <img src="../images/course3.jpg" class="rounded-xl shadow-lg w-full h-48 object-cover transform hover:scale-110 transition" />
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACT STATISTICS -->
+  <section class="w-full py-16 px-4 bg-white dark:bg-[#23232b]">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-3xl md:text-5xl font-bold mb-8 text-orange-600">Our Impact</h2>
+      <div class="flex flex-wrap justify-center gap-12">
+        <div>
+          <div class="impact-stat" id="stat1">0</div>
+          <div class="text-gray-700 dark:text-gray-300">Villagers Empowered</div>
+        </div>
+        <div>
+          <div class="impact-stat" id="stat2">0</div>
+          <div class="text-gray-700 dark:text-gray-300">Digital Classes</div>
+        </div>
+        <div>
+          <div class="impact-stat" id="stat3">0</div>
+          <div class="text-gray-700 dark:text-gray-300">Projects Launched</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS FLOATING -->
+  <section class="w-full py-16 px-4 bg-gradient-to-b from-orange-50 to-white dark:from-[#23232b] dark:to-[#18181b]">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-5xl font-bold mb-8 text-orange-600">Testimonials</h2>
+      <div class="flex flex-wrap justify-center gap-8">
+        <div class="bg-white dark:bg-orange-900 rounded-2xl p-6 shadow w-72 flex flex-col items-center floating">
+          <img src="../images/course1.jpg" class="w-16 h-16 rounded-full mb-3 border-4 border-white shadow" />
+          <span class="font-bold mb-1">Ayu</span>
+          <span class="text-gray-700 dark:text-gray-300 text-sm mb-2">"Belajar di Digital Kampung bikin semangat!"</span>
+        </div>
+        <div class="bg-white dark:bg-orange-900 rounded-2xl p-6 shadow w-72 flex flex-col items-center floating" style="animation-delay:0.7s;">
+          <img src="../images/course2.jpg" class="w-16 h-16 rounded-full mb-3 border-4 border-white shadow" />
+          <span class="font-bold mb-1">Budi</span>
+          <span class="text-gray-700 dark:text-gray-300 text-sm mb-2">"Komunitasnya asik dan inspiratif!"</span>
+        </div>
+        <div class="bg-white dark:bg-orange-900 rounded-2xl p-6 shadow w-72 flex flex-col items-center floating" style="animation-delay:1.2s;">
+          <img src="../images/course3.jpg" class="w-16 h-16 rounded-full mb-3 border-4 border-white shadow" />
+          <span class="font-bold mb-1">Cici</span>
+          <span class="text-gray-700 dark:text-gray-300 text-sm mb-2">"Banyak teman baru dan ilmu baru!"</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    // Impact count-up animation
+    function animateCount(id, target, duration) {
+      let start = 0;
+      const step = Math.ceil(target / (duration/20));
+      const el = document.getElementById(id);
+      function update() {
+        start += step;
+        if (start > target) start = target;
+        el.textContent = start;
+        if (start < target) setTimeout(update, 20);
+      }
+      update();
+    }
+    animateCount('stat1', 1200, 1200);
+    animateCount('stat2', 85, 1000);
+    animateCount('stat3', 34, 900);
+  </script>
+</body>
+</html> 

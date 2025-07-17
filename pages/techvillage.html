@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechVillage</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .wave-bg {
+      position: absolute;
+      left: 0; right: 0; top: 0; z-index: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+    }
+    .masonry {
+      column-count: 2;
+      column-gap: 1.5rem;
+    }
+    .masonry > div {
+      break-inside: avoid;
+      margin-bottom: 1.5rem;
+    }
+    @media (max-width: 900px) {
+      .masonry { column-count: 1; }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-[#f0fdfa] to-[#e0e7ef] dark:from-[#18181b] dark:to-[#23232b] text-gray-900 dark:text-white">
+  <!-- HERO -->
+  <section class="w-full py-20 px-4 flex flex-col md:flex-row items-center justify-between gap-10 relative overflow-hidden">
+    <svg class="wave-bg" viewBox="0 0 1440 320"><path fill="#6ee7b7" fill-opacity="0.3" d="M0,160L60,170.7C120,181,240,203,360,197.3C480,192,600,160,720,133.3C840,107,960,85,1080,101.3C1200,117,1320,171,1380,197.3L1440,224L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+    <div class="flex-1 flex flex-col justify-center items-start z-10">
+      <h1 class="text-5xl md:text-7xl font-extrabold mb-4 animate-bounce">TechVillage</h1>
+      <p class="text-lg md:text-2xl mb-6 max-w-xl">A digital village for creators, learners, and innovators. We connect people and technology for a better future.</p>
+      <a href="../index.html" class="inline-block px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-bold rounded-lg shadow transition mb-4">← Back to Home</a>
+    </div>
+    <div class="flex-1 flex justify-center items-center z-10">
+      <img src="../images/course2.jpg" alt="TechVillage" class="rounded-2xl shadow-2xl w-80 h-64 object-cover border-4 border-green-100 dark:border-green-900" />
+    </div>
+    <div class="absolute inset-0 pointer-events-none z-0">
+      <canvas id="particle-canvas" width="1440" height="320"></canvas>
+    </div>
+  </section>
+
+  <!-- VILLAGE MAP DUMMY -->
+  <section class="w-full py-16 px-4 bg-white dark:bg-[#23232b]">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-5xl font-bold mb-4 text-green-600">Village Map</h2>
+      <div class="relative w-full h-64 bg-green-50 dark:bg-green-900 rounded-2xl shadow flex items-center justify-center">
+        <img src="../images/course1.jpg" class="absolute left-1/4 top-1/3 w-16 h-16 rounded-full border-4 border-white shadow-lg cursor-pointer hover:scale-110 transition" title="Main Hall" />
+        <img src="../images/course2.jpg" class="absolute right-1/4 top-1/2 w-16 h-16 rounded-full border-4 border-white shadow-lg cursor-pointer hover:scale-110 transition" title="Workshop" />
+        <img src="../images/course3.jpg" class="absolute left-1/2 bottom-8 w-16 h-16 rounded-full border-4 border-white shadow-lg cursor-pointer hover:scale-110 transition" title="Gallery" />
+        <span class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl font-bold text-green-700 dark:text-green-200">TechVillage Map</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIGITAL EVENTS SLIDER -->
+  <section class="w-full py-16 px-4 bg-gradient-to-r from-green-50 to-white dark:from-[#23232b] dark:to-[#18181b]">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl md:text-5xl font-bold mb-8 text-green-600 text-center">Digital Events</h2>
+      <div class="flex overflow-x-auto gap-8 pb-4 snap-x">
+        <div class="min-w-[320px] snap-center bg-green-100 dark:bg-green-900 rounded-xl px-8 py-6 shadow flex flex-col items-center">
+          <span class="text-4xl mb-2">🎤</span>
+          <span class="font-bold mb-1">Webinar: Future Tech</span>
+          <span class="text-gray-700 dark:text-gray-300 text-sm">Join our live webinar on the future of technology.</span>
+        </div>
+        <div class="min-w-[320px] snap-center bg-blue-100 dark:bg-blue-900 rounded-xl px-8 py-6 shadow flex flex-col items-center">
+          <span class="text-4xl mb-2">🛠️</span>
+          <span class="font-bold mb-1">Workshop: Build Apps</span>
+          <span class="text-gray-700 dark:text-gray-300 text-sm">Hands-on coding and app development session.</span>
+        </div>
+        <div class="min-w-[320px] snap-center bg-yellow-100 dark:bg-yellow-900 rounded-xl px-8 py-6 shadow flex flex-col items-center">
+          <span class="text-4xl mb-2">💡</span>
+          <span class="font-bold mb-1">Ideathon</span>
+          <span class="text-gray-700 dark:text-gray-300 text-sm">Pitch your ideas and win prizes!</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VILLAGE STORIES MASONRY -->
+  <section class="w-full py-16 px-4 bg-white dark:bg-[#23232b]">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl md:text-5xl font-bold mb-8 text-green-600 text-center">Village Stories</h2>
+      <div class="masonry">
+        <div class="bg-green-100 dark:bg-green-900 rounded-2xl p-6 shadow mb-4 hover:scale-105 transition cursor-pointer">
+          <h3 class="font-bold mb-2">Ayu's Journey</h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-2">From beginner to web developer in 6 months!</p>
+          <img src="../images/course1.jpg" class="rounded-xl shadow w-full h-32 object-cover mb-2" />
+        </div>
+        <div class="bg-blue-100 dark:bg-blue-900 rounded-2xl p-6 shadow mb-4 hover:scale-105 transition cursor-pointer">
+          <h3 class="font-bold mb-2">Budi's Project</h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-2">Built a digital village app for the community.</p>
+          <img src="../images/course2.jpg" class="rounded-xl shadow w-full h-32 object-cover mb-2" />
+        </div>
+        <div class="bg-yellow-100 dark:bg-yellow-900 rounded-2xl p-6 shadow mb-4 hover:scale-105 transition cursor-pointer">
+          <h3 class="font-bold mb-2">Cici's Story</h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-2">Organized a successful online event.</p>
+          <img src="../images/course3.jpg" class="rounded-xl shadow w-full h-32 object-cover mb-2" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOIN US FORM -->
+  <section class="w-full py-16 px-4 bg-green-600 text-white">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl md:text-5xl font-bold mb-4">Join TechVillage!</h2>
+      <p class="text-lg md:text-xl mb-6">Be part of our digital community. Learn, share, and grow together with us!</p>
+      <form class="flex flex-col md:flex-row gap-4 justify-center items-center">
+        <input type="text" placeholder="Your Name" class="px-4 py-3 rounded-lg text-gray-900 w-60" required />
+        <input type="email" placeholder="Your Email" class="px-4 py-3 rounded-lg text-gray-900 w-60" required />
+        <button type="submit" class="px-8 py-3 bg-white text-green-600 font-bold rounded-lg shadow hover:bg-green-100 transition">Join Now</button>
+      </form>
+    </div>
+  </section>
+  <script>
+    // Particle animation for hero
+    const canvas = document.getElementById('particle-canvas');
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      let particles = Array.from({length: 30}, () => ({
+        x: Math.random()*canvas.width,
+        y: Math.random()*canvas.height,
+        r: Math.random()*3+2,
+        dx: (Math.random()-0.5)*1.5,
+        dy: (Math.random()-0.5)*1.5
+      }));
+      function draw() {
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        for (const p of particles) {
+          ctx.beginPath();
+          ctx.arc(p.x,p.y,p.r,0,2*Math.PI);
+          ctx.fillStyle = '#6ee7b7';
+          ctx.globalAlpha = 0.5;
+          ctx.fill();
+        }
+      }
+      function update() {
+        for (const p of particles) {
+          p.x += p.dx; p.y += p.dy;
+          if (p.x<0||p.x>canvas.width) p.dx*=-1;
+          if (p.y<0||p.y>canvas.height) p.dy*=-1;
+        }
+      }
+      function loop() { draw(); update(); requestAnimationFrame(loop); }
+      loop();
+    }
+  </script>
+</body>
+</html> 
