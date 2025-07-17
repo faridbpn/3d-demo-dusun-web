@@ -452,3 +452,63 @@
     });
 
     // Tambahkan style untuk .service-card.active di CSS
+
+    // Portfolio data
+    const portfolioProjects = [
+      {type: 'apps', img: 'images/lemper ayam.jpg', title: 'Lemper App'},
+      {type: 'apps', img: 'images/course2.jpg', title: 'Sate App'},
+      {type: 'apps', img: 'images/course3.jpg', title: 'Nasi Uduk App'},
+      {type: 'apps', img: 'images/course1.jpg', title: 'Bakso App'},
+      {type: 'websites', img: 'images/course2.jpg', title: 'Portfolio Website'},
+      {type: 'websites', img: 'images/course3.jpg', title: 'Company Profile'},
+      {type: 'websites', img: 'images/course1.jpg', title: 'Landing Page'},
+      {type: 'websites', img: 'images/lemper ayam.jpg', title: 'Food Blog'},
+    ];
+    function renderPortfolioGrid(filter) {
+      const grid = document.getElementById('portfolio-grid');
+      let filtered = portfolioProjects;
+      if (filter && filter !== 'all') filtered = portfolioProjects.filter(p => p.type === filter);
+      grid.innerHTML = filtered.map((p, i) => `
+        <div class="portfolio-card group relative cursor-pointer" data-type="${p.type}" data-title="${p.title}">
+          <img src="${p.img}" class="w-full h-56 object-cover rounded-xl shadow-lg portfolio-img" />
+          <div class="portfolio-overlay group-hover:opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-xl">
+            <span class="text-xl font-bold">${p.title}</span>
+          </div>
+        </div>
+      `).join('');
+    }
+    // Initial render
+    renderPortfolioGrid('all');
+    // Filter button interaction
+    const filterBtns = document.querySelectorAll('.portfolio-filter-btn');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        renderPortfolioGrid(this.dataset.type);
+        // Remove mobile overlay state
+        document.querySelectorAll('.portfolio-card').forEach(c => c.classList.remove('active'));
+      });
+    });
+    // Mobile overlay interaction (re-attach after render)
+    function attachPortfolioMobileOverlay() {
+      const portfolioCards = document.querySelectorAll('.portfolio-card');
+      function isMobile() { return window.innerWidth <= 768; }
+      portfolioCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+          if (!isMobile()) return;
+          e.preventDefault();
+          portfolioCards.forEach(c => c.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+    }
+    attachPortfolioMobileOverlay();
+    // Re-attach overlay after grid re-render
+    const observer = new MutationObserver(attachPortfolioMobileOverlay);
+    observer.observe(document.getElementById('portfolio-grid'), {childList: true});
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        document.querySelectorAll('.portfolio-card').forEach(c => c.classList.remove('active'));
+      }
+    });

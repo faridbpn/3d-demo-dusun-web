@@ -254,3 +254,82 @@
     min-width: 0 !important;
   }
 }
+
+/* Portfolio Section */
+.portfolio-card {
+  overflow: hidden;
+  border-radius: 1rem;
+  position: relative;
+}
+.portfolio-img {
+  transition: filter 0.3s, transform 0.3s;
+}
+.group:hover .portfolio-img {
+  filter: blur(2px) brightness(0.7);
+  transform: scale(1.04);
+}
+.portfolio-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.group:hover .portfolio-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+@media (max-width: 768px) {
+  .portfolio-overlay {
+    opacity: 0 !important;
+    pointer-events: none;
+  }
+  .portfolio-card.active .portfolio-overlay {
+    opacity: 1 !important;
+    pointer-events: auto;
+  }
+  .portfolio-card.active .portfolio-img {
+    filter: blur(2px) brightness(0.7);
+    transform: scale(1.04);
+  }
+}
+.portfolio-filter-btn {
+  @apply px-4 py-2 rounded font-bold shadow bg-white text-[#d3544a] hover:bg-gray-100 transition relative overflow-hidden;
+  font-size: 1.1rem;
+  border: 2px solid #d3544a;
+  box-shadow: 0 2px 8px 0 rgba(211,84,74,0.08);
+  margin-bottom: 0.1rem;
+}
+.portfolio-filter-btn.active {
+  @apply bg-gradient-to-r from-[#d3544a] to-[#b03a2e] text-white shadow-lg;
+  border: 2px solid #b03a2e;
+  transform: scale(1.08);
+  z-index: 2;
+}
+.filter-label {
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 0 0.5rem;
+  position: relative;
+}
+.portfolio-filter-btn.filter-all .filter-label {
+  color: #d3544a;
+  text-shadow: 0 2px 8px #f8c291;
+}
+.portfolio-filter-btn.filter-apps .filter-label {
+  color: #16a085;
+  text-shadow: 0 2px 8px #b8e994;
+}
+.portfolio-filter-btn.filter-websites .filter-label {
+  color: #2980b9;
+  text-shadow: 0 2px 8px #d6eaff;
+}
+.portfolio-filter-btn.active .filter-label {
+  color: #fff !important;
+  text-shadow: 0 2px 8px #b03a2e;
+}
