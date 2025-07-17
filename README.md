@@ -30,7 +30,8 @@ Landing page ini dirancang untuk menampilkan pengalaman visual yang modern, inte
 ```
 📂 project-root/
 ├── index.html
-├── styles.css (jika terpisah)
+├── styles.css
+├── main.js
 └── README.md
 ```
 
