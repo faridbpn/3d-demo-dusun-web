@@ -25,25 +25,19 @@
       </nav>
     </div>
   </header>
-
   <!-- HERO SECTION -->
-  <section class="relative w-full h-screen overflow-hidden flex items-center justify-between pt-24">
-    <!-- Dynamic words above chipset -->
-    <span id="dynamic-words" class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl md:text-4xl font-bold text-white z-20 drop-shadow-lg transition-opacity duration-500"></span>
-    <div class="absolute inset-0 z-0">
-      <spline-viewer url="https://prod.spline.design/ms54OA84Iw1XjF2q/scene.splinecode" class="w-full h-full"></spline-viewer>
-    </div>
-    <div class="relative z-10 max-w-xl px-6 md:px-20">
-      <h1 class="text-4xl md:text-6xl font-bold text-white drop-shadow-lg mb-4">
-        <a id="hero-title-link" href="#" class="transition-colors duration-300">
-          <span id="hero-title"></span>
-        </a>
-      </h1>
-      <p class="text-lg md:text-2xl text-gray-300">
-        <span id="hero-subtitle"></span>
-      </p>
-    </div>
-  </section>
+ <!-- HERO SECTION (Updated) -->
+<section class="relative w-full h-screen overflow-hidden flex items-center justify-center">
+  <!-- Spline Viewer dengan robot follow cursor -->
+   <spline-viewer url="https://prod.spline.design/dnE22ktI2cyCghCn/scene.splinecode" class="absolute inset-0 w-full h-full z-0"></spline-viewer>
+
+  <!-- Text di tengah -->
+  <div class="relative z-10 text-center px-6">
+    <h1 class="text-5xl md:text-7xl font-bold text-white drop-shadow-lg">DusunWeb</h1>
+    <p class="text-lg md:text-2xl text-yellow-300 mt-4">Explore the Future of 3D Web</p>
+  </div>
+</section>
+
 
   <!-- OUR SERVICES SECTION -->
   <section id="our-services" class="w-full bg-white dark:bg-black py-20 px-4">
@@ -135,10 +129,13 @@
     </div>
   </section>
 
-  <!-- INTERACTIVE TIMELINE SECTION -->
-  <section id="timeline" class="w-full py-20 px-4 bg-gradient-to-b from-[#18181b] to-black text-white">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-center text-3xl md:text-5xl font-extrabold mb-10 tracking-tight">Your Learning Journey</h2>
+<!-- INTERACTIVE TIMELINE SECTION (with robot) -->
+<section id="timeline" class="w-full py-20 px-4 bg-gradient-to-b from-[#18181b] to-black text-white">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+    
+    <!-- Timeline Text Content -->
+    <div>
+      <h2 class="text-center md:text-left text-3xl md:text-5xl font-extrabold mb-10 tracking-tight">Your Learning Journey</h2>
       <div class="relative border-l-4 border-blue-700 ml-6">
         <div class="timeline-step mb-12 ml-8 flex items-center group">
           <div class="w-10 h-10 flex items-center justify-center rounded-full bg-blue-700 text-white font-bold text-xl shadow-lg group-hover:scale-110 transition">1</div>
@@ -170,7 +167,14 @@
         </div>
       </div>
     </div>
-  </section>
+
+    <!-- Robot Model -->
+    <div class="w-full h-[600px] relative rounded-2xl shadow-xl group transition-all duration-500 hover:scale-[1.03] hover:rotate-[0.5deg]">
+      <spline-viewer url="https://prod.spline.design/XcaWfKyocy3PeoXn/scene.splinecode" class="absolute inset-0 w-full h-full rounded-2xl"></spline-viewer>
+    </div>
+  </div>
+</section>
+
 
   <!-- FUN FACT 3D FLIP SECTION -->
   <section id="fun-fact-3d" class="w-full py-20 px-4 bg-white dark:bg-[#18181b]">
