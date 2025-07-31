@@ -6,6 +6,7 @@
   <title>Digital Kampung</title>
   <link rel="stylesheet" href="../style.css">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.32/build/spline-viewer.js"></script>
   <style>
     .curved-headline {
       font-size: 2.5rem;
@@ -40,9 +41,12 @@
       <p class="text-lg md:text-2xl mb-6 max-w-xl">A digital village for everyone. We empower communities with technology, learning, and collaboration.</p>
       <a href="../index.html" class="inline-block px-6 py-3 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-lg shadow transition mb-4">← Back to Home</a>
     </div>
-    <div class="flex-1 flex justify-center items-center">
+    <div class="flex-1 flex justify-center items-center relative">
       <svg width="180" height="180" viewBox="0 0 180 180"><circle cx="90" cy="90" r="80" fill="#fbbf24" opacity="0.2"/><circle cx="90" cy="90" r="60" fill="#ea580c" opacity="0.3"/></svg>
       <img src="../images/course1.jpg" alt="Digital Kampung" class="rounded-2xl shadow-2xl w-60 h-48 object-cover border-4 border-orange-100 dark:border-orange-900 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+      <div class="absolute bottom-0 left-1/2 -translate-x-1/2">
+        <spline-viewer url="https://prod.spline.design/YcfMJu3VDLKs7nXO/scene.splinecode" class="w-60 h-40 md:w-80 md:h-56 rounded-2xl shadow-xl"></spline-viewer>
+      </div>
     </div>
   </section>
 
@@ -53,7 +57,7 @@
       <div class="flex flex-wrap gap-6 justify-center items-end">
         <div class="bubble-chat bg-orange-600 text-white rounded-2xl px-6 py-4 shadow-lg relative animate-bounce-in">
           <img src="../images/course1.jpg" class="w-10 h-10 rounded-full absolute -top-6 left-4 border-2 border-white shadow" />
-          <span class="block font-bold mb-1">Ayu</span>
+          <span class="block font-bold mb-1">Dian</span>
           <span class="block text-sm">Belajar digital di kampung itu seru!</span>
         </div>
         <div class="bubble-chat bg-green-600 text-white rounded-2xl px-6 py-4 shadow-lg relative animate-bounce-in delay-200">
@@ -122,6 +126,108 @@
           <img src="../images/course3.jpg" class="w-16 h-16 rounded-full mb-3 border-4 border-white shadow" />
           <span class="font-bold mb-1">Cici</span>
           <span class="text-gray-700 dark:text-gray-300 text-sm mb-2">"Banyak teman baru dan ilmu baru!"</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3D SHOWCASE SECTION -->
+  <section class="w-full py-20 px-4 bg-gradient-to-br from-orange-100 via-yellow-50 to-orange-50 dark:from-[#1a1a1a] dark:via-[#2a2a2a] dark:to-[#1a1a1a] relative overflow-hidden">
+    <!-- Background 3D Elements -->
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-20 left-10 w-20 h-20 bg-orange-400 rounded-full blur-xl animate-pulse"></div>
+      <div class="absolute top-40 right-20 w-16 h-16 bg-yellow-400 rounded-full blur-xl animate-pulse" style="animation-delay: 1s;"></div>
+      <div class="absolute bottom-20 left-1/4 w-24 h-24 bg-orange-300 rounded-full blur-xl animate-pulse" style="animation-delay: 2s;"></div>
+    </div>
+    
+    <div class="max-w-6xl mx-auto relative z-10">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-6xl font-bold mb-6 text-orange-600 relative">
+          <span class="relative z-10">3D Digital Experience</span>
+          <div class="absolute -inset-2 bg-gradient-to-r from-orange-400 to-yellow-400 blur-lg opacity-30 -z-10"></div>
+        </h2>
+        <p class="text-xl md:text-2xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+          Explore our immersive 3D digital village experience with interactive elements and cutting-edge technology
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- 3D Interactive Scene -->
+        <div class="relative group">
+          <div class="relative bg-gradient-to-br from-orange-500 to-yellow-500 p-1 rounded-3xl shadow-2xl transform group-hover:scale-105 transition-all duration-500">
+            <div class="bg-white dark:bg-gray-900 rounded-3xl p-6">
+              <spline-viewer 
+                url="https://prod.spline.design/YcfMJu3VDLKs7nXO/scene.splinecode" 
+                class="w-full h-80 rounded-2xl shadow-xl transform hover:rotate-2 transition-transform duration-300"
+              ></spline-viewer>
+              <div class="mt-4 text-center">
+                <h3 class="text-2xl font-bold text-orange-600 mb-2">Interactive Village</h3>
+                <p class="text-gray-600 dark:text-gray-400">Click and drag to explore our 3D digital village</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Floating Elements -->
+          <div class="absolute -top-4 -right-4 w-16 h-16 bg-yellow-400 rounded-full opacity-80 animate-bounce"></div>
+          <div class="absolute -bottom-4 -left-4 w-12 h-12 bg-orange-400 rounded-full opacity-80 animate-bounce" style="animation-delay: 0.5s;"></div>
+        </div>
+
+        <!-- 3D Features Showcase -->
+        <div class="space-y-8">
+          <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg transform hover:scale-105 transition-all duration-300 border-l-4 border-orange-500">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-gradient-to-br from-orange-400 to-yellow-400 rounded-full flex items-center justify-center mr-4">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 dark:text-white">Real-time Interaction</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-300">Experience seamless 3D interactions with our digital village environment</p>
+          </div>
+
+          <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg transform hover:scale-105 transition-all duration-300 border-l-4 border-yellow-500">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-full flex items-center justify-center mr-4">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 dark:text-white">Virtual Learning</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-300">Immerse yourself in educational 3D environments for enhanced learning</p>
+          </div>
+
+          <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg transform hover:scale-105 transition-all duration-300 border-l-4 border-orange-500">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-gradient-to-br from-orange-400 to-yellow-400 rounded-full flex items-center justify-center mr-4">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 dark:text-white">Community Hub</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-300">Connect with fellow villagers in our 3D community space</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3D Stats Cards -->
+      <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-gradient-to-br from-orange-500 to-yellow-500 rounded-2xl p-6 text-white text-center transform hover:scale-110 transition-all duration-300 shadow-xl">
+          <div class="text-4xl font-bold mb-2">500+</div>
+          <div class="text-lg">3D Interactions</div>
+          <div class="text-sm opacity-80">Daily active users</div>
+        </div>
+        <div class="bg-gradient-to-br from-yellow-500 to-orange-500 rounded-2xl p-6 text-white text-center transform hover:scale-110 transition-all duration-300 shadow-xl">
+          <div class="text-4xl font-bold mb-2">50+</div>
+          <div class="text-lg">3D Models</div>
+          <div class="text-sm opacity-80">Custom created</div>
+        </div>
+        <div class="bg-gradient-to-br from-orange-500 to-yellow-500 rounded-2xl p-6 text-white text-center transform hover:scale-110 transition-all duration-300 shadow-xl">
+          <div class="text-4xl font-bold mb-2">24/7</div>
+          <div class="text-lg">Virtual Access</div>
+          <div class="text-sm opacity-80">Always available</div>
         </div>
       </div>
     </div>

@@ -6,6 +6,7 @@
   <title>TechVillage</title>
   <link rel="stylesheet" href="../style.css">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.32/build/spline-viewer.js"></script>
   <style>
     .wave-bg {
       position: absolute;
@@ -47,11 +48,14 @@
   <section class="w-full py-16 px-4 bg-white dark:bg-[#23232b]">
     <div class="max-w-4xl mx-auto text-center">
       <h2 class="text-3xl md:text-5xl font-bold mb-4 text-green-600">Village Map</h2>
-      <div class="relative w-full h-64 bg-green-50 dark:bg-green-900 rounded-2xl shadow flex items-center justify-center">
+      <div class="relative w-full h-64 bg-green-50 dark:bg-green-900 rounded-2xl shadow flex items-center justify-center mb-8">
         <img src="../images/course1.jpg" class="absolute left-1/4 top-1/3 w-16 h-16 rounded-full border-4 border-white shadow-lg cursor-pointer hover:scale-110 transition" title="Main Hall" />
         <img src="../images/course2.jpg" class="absolute right-1/4 top-1/2 w-16 h-16 rounded-full border-4 border-white shadow-lg cursor-pointer hover:scale-110 transition" title="Workshop" />
         <img src="../images/course3.jpg" class="absolute left-1/2 bottom-8 w-16 h-16 rounded-full border-4 border-white shadow-lg cursor-pointer hover:scale-110 transition" title="Gallery" />
         <span class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl font-bold text-green-700 dark:text-green-200">TechVillage Map</span>
+      </div>
+      <div class="flex justify-center mb-8">
+        <spline-viewer url="https://prod.spline.design/b78bs0Zy6J7R0Ayb/scene.splinecode" class="w-80 h-64 md:w-96 md:h-80 rounded-2xl shadow-xl"></spline-viewer>
       </div>
     </div>
   </section>

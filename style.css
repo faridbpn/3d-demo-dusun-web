@@ -329,3 +329,11 @@
   padding: 0 0.5rem;
   position: relative;
 }
+
+.carousel3d {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.carousel3d::-webkit-scrollbar {
+  display: none;
+}
