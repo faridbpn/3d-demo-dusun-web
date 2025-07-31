@@ -330,10 +330,25 @@
   position: relative;
 }
 
-.carousel3d {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-.carousel3d::-webkit-scrollbar {
-  display: none;
-}
+/* punya farid 💀 */
+@keyframes neon-flow {
+    0% {
+      background-position: 0% 0%;
+    }
+    100% {
+      background-position: 0% 100%;
+    }
+  }
+
+  .neon-border {
+    position: absolute;
+    left: -1px;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(0deg, #00f7ff, #0070ff, #00f7ff);
+    background-size: 100% 200%;
+    animation: neon-flow 4s linear infinite;
+    border-radius: 2px;
+    box-shadow: 0 0 10px #00f7ff, 0 0 20px #0070ff;
+  }
